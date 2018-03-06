@@ -1,0 +1,215 @@
+\documentclass{tufte-handout}
+
+%\geometry{showframe}% for debugging purposes -- displays the margins
+
+\usepackage{amsmath}
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage{wrapfig}
+
+
+% Set up the images/graphics package
+\usepackage{graphicx}
+\setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio}
+\graphicspath{{graphics/}}
+
+\title{Create a Customer Feedback Survey}
+\author{Matthew Murphy}
+\date{\today}  % if the \date{} command is left out, the current date will be used
+
+% The following package makes prettier tables.  We're all about the bling!
+\usepackage{booktabs}
+
+% The units package provides nice, non-stacked fractions and better spacing
+% for units.
+\usepackage{units}
+
+% The fancyvrb package lets us customize the formatting of verbatim
+% environments.  We use a slightly smaller font.
+\usepackage{fancyvrb}
+\fvset{fontsize=\normalsize}
+
+% Small sections of multiple columns
+\usepackage{multicol}
+
+% Provides paragraphs of dummy text
+\usepackage{lipsum}
+
+% These commands are used to pretty-print LaTeX commands
+\newcommand{\doccmd}[1]{\texttt{\textbackslash#1}}% command name -- adds backslash automatically
+\newcommand{\docopt}[1]{\ensuremath{\langle}\textrm{\textit{#1}}\ensuremath{\rangle}}% optional command argument
+\newcommand{\docarg}[1]{\textrm{\textit{#1}}}% (required) command argument
+\newenvironment{docspec}{\begin{quote}\noindent}{\end{quote}}% command specification environment
+\newcommand{\docenv}[1]{\textsf{#1}}% environment name
+\newcommand{\docpkg}[1]{\texttt{#1}}% package name
+\newcommand{\doccls}[1]{\texttt{#1}}% document class name
+\newcommand{\docclsopt}[1]{\texttt{#1}}% document class option name
+
+\begin{document}
+
+\maketitle% this prints the handout title, author, and date
+
+\section{Purpose}
+Create a customer feedback survey using SurveyMonkey.
+
+\section{Assumptions}
+These instructions assume that:
+\begin{itemize}
+    \item The user has experience using a web browser to navigate the internet. 
+    \item The user has signed up for an account on the SurveyMonkey website. \sidenote{SuveyMonkey offers both free and paid accounts. All steps in these instructions can be performed using a free SurveyMonkey account.}
+\end{itemize}
+
+
+\section{Definitions}
+
+\begin{itemize}
+    \item \textbf{SurveyMonkey} - SurveyMonkey is an online survey tool. According to Wikipedia, SurveyMonkey provides free, customizable surveys, as well as a suite of paid back-end programs that include data analysis, sample selection, bias elimination, and data representation tools. \cite{noauthor_surveymonkey_2018}
+\end{itemize}
+
+\section{Requirements}
+
+\begin{itemize}
+    \item A personal or laptop computer with internet browsing software installed.
+    \item A connection to the internet.
+    \item A SurveyMonkey account.
+    
+
+
+\end{itemize}
+
+\section{Procedure}
+\subsection{Create survey}
+
+\begin{enumerate}
+    \item In your internet browser, navigate to \url{https://www.surveymonkey.com}. Log into your SurveyMonkey account and click the \textbf{Create Survey} button near the upper right corner of the webpage.
+    \item Name your survey "Customer Feedback Survey". Selecting a \textit{Survey category} is optional. Do not check the box labeled \textit{My questions are already written.}
+    
+      \begin{marginfigure}%
+        \includegraphics[width=.9\linewidth]{sm3-crop}
+        \caption{Name your survey}
+        \label{fig:marginfig1}
+    \end{marginfigure}
+
+    \item Click the \textbf{Create Survey} button to continue.
+
+\end{enumerate}
+
+
+\subsection{Design survey}
+
+\newthought{Survey question one: What is your name?}
+
+\begin{enumerate}
+    \item In the text box labeled \textbf{Q1} type: "What is your name?" The box to the right of this indicates the question type. Use the drop-down menu to select \textit{Single question}. \sidenote[][-5\baselineskip]{SurveyMonkey will attempt to fill in the question type for you. If the question type is correct, you do not need to re-select it from the drop-down menu.}
+
+      \begin{marginfigure}[-2\baselineskip]
+        \includegraphics[width=.9\linewidth]{sm24-crop}
+        \caption{Use the drop-down menu to select \textit{Single quetsion}}
+        \label{fig:marginfig2}
+    \end{marginfigure}
+
+    \item Click the \textbf{Next Question} button to continue.
+\end{enumerate}
+
+
+
+\newthought{Survey question two: What is your email address?}
+\begin{enumerate}
+    \item In the text box labeled \textbf{Q2} type: "What is your email address?" Use the drop-down menu to select \textit{Single question}.
+    
+      \begin{marginfigure}%
+        \includegraphics[width=.9\linewidth]{sm19-crop}
+        \caption{\textit{Validate your Answer for a Specific Format}}
+        \label{fig:marginfig3}
+    \end{marginfigure}    
+    
+    
+    \item Click the word \textbf{Options} from the menu above the question text and place a check in the box next to the option \textit{Validate your Answer for a Specific Format}.
+    \item Select \textbf{an email address} from the drop-down menu below \textbf{Answer should be...} 
+    \item In the text box labeled \textbf{When the answer is invalid, display this error message}, replace the existing text with: "Please enter a valid email address."
+    \item Click the \textbf{Next Question} button to continue.
+\end{enumerate}
+
+
+\newthought{Survey question three: What product did you purchase?}
+\begin{enumerate}
+    \item In the text box labeled \textbf{Q3} type: "What product did you purchase?" Use the drop-down menu to select \textit{Multiple choice}. 
+    
+    \begin{marginfigure}%
+        \includegraphics[width=.9\linewidth]{sm20-crop}
+        \caption{Product A for the first answer choice; Product B for the second}
+        \label{fig:marginfig4}
+    \end{marginfigure}      
+    
+    \item Type "Product A" for the first answer choice and "Product B" for the second answer choice.
+    \item Click the \textbf{Next Question} button to continue.
+\end{enumerate}
+
+\newthought{Survey question four: When did you purchase this product?}
+\begin{enumerate}
+    \item In the text box labeled \textbf{Q4} type: "When did you purchase this product?" Use the drop-down menu to select \textit{Date/ Time}.
+    
+        \begin{marginfigure}%
+            \includegraphics[width=.9\linewidth]{sm21-crop}
+            \caption{Uncheck \textit{Time info}}
+            \label{fig:marginfig5}
+        \end{marginfigure} 
+    
+    \item Replace the text in \textit{Label 1} with "Date". In the section labeled \textbf{Collect} uncheck \textit{Time info}.
+    \item Click the \textbf{Next Question} button to continue.
+\end{enumerate}
+
+\newthought{Survey question five: Would you recommend this product to a friend?}
+\begin{enumerate}
+    \item In the text box labeled \textbf{Q5} type: "Would you recommend this product to a friend?" Use the drop-down menu to select \textit{Multiple choice}. 
+    \item Type "Yes" for the first answer choice and "No" for the second answer choice.
+    \item Click the \textbf{Next Question} button to continue.
+\end{enumerate}
+
+\newthought{Survey question six: Additional comments}
+\begin{enumerate}
+    \item In the text box labeled \textbf{Q6} type: "Additional comments". Use the drop-down menu to select \textit{Comment Box}. 
+    
+        \begin{marginfigure}%
+            \includegraphics[width=.9\linewidth]{sm22-crop}
+            \caption{Additional comments}
+            \label{fig:marginfig6}
+        \end{marginfigure}
+    
+    
+    \item Click the \textbf{Save} button. Then click the \textbf{Next} button to preview the survey.
+\end{enumerate}
+
+\subsection{Preview and Collect Responses}
+
+\begin{enumerate}
+    \item Test each survey question in the preview window. Make any additional changes. \sidenote{To make changes to your survey questions, click \textit{Design Survey} from the menu above the preview window.}
+    \item Click \textit{Collect Responses} from the menu located above the survey.
+
+        \begin{marginfigure}[1\baselineskip]%
+            \includegraphics[width=.9\linewidth]{sm25-crop}
+            \caption{Click \textit{Collect Responses}}
+            \label{fig:marginfig7}
+        \end{marginfigure}
+
+    \item From the \textbf{Send Quickly} column, select \textbf{Web Link}.
+
+
+
+\end{enumerate}
+\subsection{Result}
+
+
+
+SurveyMonkey has now created a unique link to your survey which you may send to your customers.
+%        \begin{marginfigure}[1\baselineskip]%
+%            \includegraphics[width=\linewidth]{sm23-crop}
+%            \caption{caption}
+%            \label{fig:marginfig}
+%        \end{marginfigure}
+
+\bibliography{sample-handout}
+\bibliographystyle{plainnat}
+
+
+\end{document}
